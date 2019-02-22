@@ -20,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/paulosales47/CursoNodeTypescript/issues"
   },
-  "homepage": "https://github.com/paulosales47/CursoNodeTypescript#readme"
+  "homepage": "https://github.com/paulosales47/CursoNodeTypescript#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "http-status": "^1.3.1",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3333"
+  }
 }
