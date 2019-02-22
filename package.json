@@ -1,0 +1,24 @@
+{
+  "name": "cursoudemy",
+  "version": "1.0.0",
+  "description": "Curso de node + docker utilizando typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulosales47/CursoNodeTypescript.git"
+  },
+  "keywords": [
+    "node",
+    "typescript",
+    "docker"
+  ],
+  "author": "Paulo Henrique Sales Sampaio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paulosales47/CursoNodeTypescript/issues"
+  },
+  "homepage": "https://github.com/paulosales47/CursoNodeTypescript#readme"
+}
