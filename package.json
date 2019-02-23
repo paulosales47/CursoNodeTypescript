@@ -4,7 +4,9 @@
   "description": "Curso de node + docker utilizando typescript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc -w",
+    "start": "node ./src/js/Program.js"
   },
   "repository": {
     "type": "git",
