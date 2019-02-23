@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "tsc -w",
-    "start": "node ./src/js/Program.js"
+    "start": "node ./dist/Program.js"
   },
   "repository": {
     "type": "git",
