@@ -1,15 +1,15 @@
 version: "3"
 services:
-  mongo:
+  api:
+    image: paulohsampaio/api
+    ports:
+      - "80:3010"
+    links:
+      - conexao
+  conexao:
     image: mongo
     ports:
       - "27017:27017"
       - "28017:28017"
     environment:
-      - "--noauth"
-  api:
-    image: paulohsampaio/api
-    ports:
-      - "3010:3010"
-    links:
-      - mongo
+      - --noauth
