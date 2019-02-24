@@ -11,7 +11,7 @@ class Auth{
                 if(erro)
                     return resposta.status(403).send({success: false, message: 'Invalid token'});                   
                 else{
-                    if(decoded.exp > new Date().setMinutes(1))
+                    if(decoded.exp > new Date().setMinutes(-1))
                         next();
                     else
                         return resposta.status(403).send({success: false, message: 'Token expired'});                   
