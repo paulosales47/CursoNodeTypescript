@@ -1,5 +1,6 @@
 import * as express from 'express'
 import * as BodyParser from 'body-parser';
+import * as cors from 'cors';
 
 import Database from './app/infra/Database';
 import  NewsController from './app/controller/NewsController'
@@ -30,7 +31,16 @@ class StartUp{
         this.app.route('/api/v1/news/:id').delete(NewsController.delete);
     }
 
+    enablaCors(){
+        const options: cors.CorsOptions = {
+            methods: "GET, OPTIONS, PUT, POST, DELETE",
+            origin: "*"
+        };
+        this.app.use(cors(options));
+    }
+
     middler(){
+        this.enablaCors();
         this.app.use(BodyParser.json());
         this.app.use(BodyParser.urlencoded({extended: false}));
     }
