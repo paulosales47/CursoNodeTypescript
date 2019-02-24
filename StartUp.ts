@@ -1,11 +1,16 @@
 import * as express from 'express'
+import Database from './app/infra/Database';
 
 class StartUp{
     public app: express.Application
+    private _db:Database;
 
     constructor() {
         this.app = express();
         this.router();
+
+        this._db = new Database();
+        this._db.createConnection();
     }
 
     router(){
