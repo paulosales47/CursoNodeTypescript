@@ -1,6 +1,9 @@
 import * as express from 'express'
-import Database from './app/infra/Database';
 import * as BodyParser from 'body-parser';
+
+import Database from './app/infra/Database';
+import  NewsConstroller from './app/controller/NewsController'
+
 
 class StartUp{
     public app: express.Application
@@ -19,6 +22,12 @@ class StartUp{
         this.app.route('/').get((requisicao, resposta)=> {
             resposta.send({versao: '0.0.1'});
         });
+
+        this.app.route('/api/v1/news').get(NewsConstroller.get);
+        this.app.route('/api/v1/news/:id').get(NewsConstroller.getById);
+        this.app.route('/api/v1/news').post(NewsConstroller.create);
+        this.app.route('/api/v1/news/:id').put(NewsConstroller.update);
+        this.app.route('/api/v1/news/:id').delete(NewsConstroller.delete);
     }
 
     middler(){
