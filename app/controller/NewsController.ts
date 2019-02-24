@@ -21,7 +21,7 @@ class NewsController{
     create(requisicao, resposta){
         let news = requisicao.body;
 
-        NewsService.getById(news)
+        NewsService.create(news)
         .then(news => Helper.sendResponse(resposta, HttpStatus.CREATED, news))
         .catch(error => console.error.bind(console, `Error ${error}`));
     }
@@ -31,7 +31,7 @@ class NewsController{
         let news = requisicao.body;
 
         NewsService.update(_id, news)
-        .then(news => Helper.sendResponse(resposta, HttpStatus.OK, `A notícia foi atualizado com sucesso`))
+        .then(news => Helper.sendResponse(resposta, HttpStatus.OK, news))
         .catch(error => console.error.bind(console, `Error ${error}`));
     }
 
