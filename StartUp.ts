@@ -5,6 +5,7 @@ import * as cors from 'cors';
 import Database from './app/infra/Database';
 import  NewsController from './app/controller/NewsController'
 import Auth from './app/infra/Auth';
+import uploads from './app/helper/Upload';
 
 
 class StartUp{
@@ -25,6 +26,14 @@ class StartUp{
             resposta.send({versao: '0.0.1'});
         });
         
+        this.app.route("/uploads").post(uploads.single('file'), (requisicao, resposta) =>{
+            try{
+                resposta.send({success: true, message: 'Upload successfully'});
+            }catch(erro) {
+                console.log(erro)
+            }
+        });
+
         this.app.use(Auth.validate);
         this.app.route('/api/v1/news').get(NewsController.get);
         this.app.route('/api/v1/news/:id').get(NewsController.getById);
