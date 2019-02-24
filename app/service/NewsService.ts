@@ -11,11 +11,11 @@ class NewsService{
     }
 
     create(news){
-        return  NewsRepository.create(news);
+        return NewsRepository.create(news);
     }
 
     update(_id, news){
-        return NewsRepository.findByIdAndUpdate(_id, news);
+        return NewsRepository.findByIdAndUpdate(_id, news, {new: true});
     }
 
     delete(_id){
