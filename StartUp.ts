@@ -2,7 +2,7 @@ import * as express from 'express'
 import * as BodyParser from 'body-parser';
 
 import Database from './app/infra/Database';
-import  NewsConstroller from './app/controller/NewsController'
+import  NewsController from './app/controller/NewsController'
 
 
 class StartUp{
@@ -23,11 +23,11 @@ class StartUp{
             resposta.send({versao: '0.0.1'});
         });
 
-        this.app.route('/api/v1/news').get(NewsConstroller.get);
-        this.app.route('/api/v1/news/:id').get(NewsConstroller.getById);
-        this.app.route('/api/v1/news').post(NewsConstroller.create);
-        this.app.route('/api/v1/news/:id').put(NewsConstroller.update);
-        this.app.route('/api/v1/news/:id').delete(NewsConstroller.delete);
+        this.app.route('/api/v1/news').get(NewsController.get);
+        this.app.route('/api/v1/news/:id').get(NewsController.getById);
+        this.app.route('/api/v1/news').post(NewsController.create);
+        this.app.route('/api/v1/news/:id').put(NewsController.update);
+        this.app.route('/api/v1/news/:id').delete(NewsController.delete);
     }
 
     middler(){
