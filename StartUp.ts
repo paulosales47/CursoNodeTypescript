@@ -1,7 +1,6 @@
 import * as express from 'express'
 import Database from './app/infra/Database';
 import * as BodyParser from 'body-parser';
-import bodyParser = require('body-parser');
 
 class StartUp{
     public app: express.Application
@@ -9,6 +8,7 @@ class StartUp{
 
     constructor() {
         this.app = express();
+        this.middler();
         this.router();
 
         this._db = new Database();
